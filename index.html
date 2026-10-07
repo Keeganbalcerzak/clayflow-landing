@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clayflow | Live claymation diffusion</title>
+    <meta
+      name="description"
+      content="Clayflow turns prompts, sketches, and product ideas into tactile stop-motion worlds with a real-time diffusion pipeline."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Clayflow home">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+          <span>Clayflow</span>
+        </a>
+        <nav class="nav-links" aria-label="Site sections">
+          <a href="#studio">Studio</a>
+          <a href="#model">Model</a>
+          <a href="#pipeline">Pipeline</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="header-action" href="#studio">Open studio</a>
+      </header>
+
+      <main id="top">
+        <section class="hero section-band" aria-labelledby="hero-title">
+          <canvas id="clay-canvas" class="hero-render-canvas" width="1600" height="980"></canvas>
+          <div class="hero-copy">
+            <h1 id="hero-title">Live claymation, generated as fast as thought</h1>
+            <p>
+              Clayflow turns prompts, sketches, and product ideas into tactile
+              stop-motion worlds with a real-time diffusion pipeline.
+            </p>
+            <div class="hero-actions" aria-label="Hero actions">
+              <a class="button primary" href="#studio">
+                Open studio
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6"></path>
+                </svg>
+              </a>
+              <a class="button secondary" href="#pipeline">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9 7 8 5-8 5V7z"></path>
+                </svg>
+                Watch reel
+              </a>
+            </div>
+          </div>
+
+          <div class="studio-frame" id="studio" aria-label="Interactive claymation studio demo">
+            <div class="record-control" aria-hidden="true">
+              <span></span>
+            </div>
+
+            <form class="prompt-row" id="prompt-form">
+              <label for="prompt-input">Prompt</label>
+              <input
+                id="prompt-input"
+                name="prompt"
+                type="text"
+                value="a curious robot exploring a playful clay world"
+                autocomplete="off"
+              >
+              <button type="submit" aria-label="Evolve claymation frame">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 12a8 8 0 0 1 13.7-5.7M20 12a8 8 0 0 1-13.7 5.7"></path>
+                  <path d="M18 2v5h-5M6 22v-5h5"></path>
+                </svg>
+              </button>
+            </form>
+
+            <div class="studio-controls" aria-label="Generation controls">
+              <div class="control-group">
+                <span class="control-label">Stage</span>
+              <div class="stage-list" aria-label="Generation stages">
+                <button class="stage" type="button" data-stage="seed">Seed</button>
+                <button class="stage" type="button" data-stage="diffuse">Diffuse</button>
+                <button class="stage active" type="button" data-stage="sculpt">Sculpt</button>
+                <button class="stage" type="button" data-stage="shoot">Shoot</button>
+              </div>
+              </div>
+
+              <div class="frame-counter" aria-live="polite">
+                <span>Frame</span>
+                <strong id="frame-count">024</strong>
+              </div>
+
+              <label class="range-control" for="texture-range">
+                <span>Texture</span>
+                <input id="texture-range" type="range" min="0" max="100" value="62">
+              </label>
+
+              <label class="range-control" for="motion-range">
+                <span>Motion</span>
+                <input id="motion-range" type="range" min="0" max="100" value="48">
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="model-section" id="model" aria-labelledby="model-title">
+          <div class="section-heading">
+            <h2 id="model-title">A model that feels handmade</h2>
+            <p>
+              Every generated shot keeps the thumbprints, material drag, squash,
+              and held-frame charm that make stop-motion feel tangible.
+            </p>
+          </div>
+
+          <div class="feature-rail">
+            <article class="feature-card">
+              <span class="feature-index">01</span>
+              <h3>Material-first generation</h3>
+              <p>Prompts become clay surfaces with visible pressure, color mixing, and soft studio depth.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-index">02</span>
+              <h3>Temporal sculpting</h3>
+              <p>Frames evolve with stop-motion timing so movement reads as crafted instead of synthetic.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-index">03</span>
+              <h3>Shot-ready outputs</h3>
+              <p>Export loops, product scenes, character beats, and social-ready reels from the same prompt pass.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="pipeline-section" id="pipeline" aria-labelledby="pipeline-title">
+          <div class="section-heading split">
+            <h2 id="pipeline-title">From prompt to shot</h2>
+            <p>
+              Clayflow is designed around a tight creative loop: generate,
+              compare, tune, and hand off a sequence without losing art direction.
+            </p>
+          </div>
+
+          <div class="pipeline-board" aria-label="Production pipeline">
+            <article>
+              <span>1</span>
+              <h3>Prompt</h3>
+              <p>Start with an idea, sketch, or product reference.</p>
+            </article>
+            <article>
+              <span>2</span>
+              <h3>Diffuse</h3>
+              <p>Build the clay world with controllable style and camera intent.</p>
+            </article>
+            <article>
+              <span>3</span>
+              <h3>Sculpt</h3>
+              <p>Lock characters, props, and surface details across frames.</p>
+            </article>
+            <article>
+              <span>4</span>
+              <h3>Shoot</h3>
+              <p>Export a reel, storyboard strip, or production handoff.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="production-section" aria-labelledby="production-title">
+          <div class="production-copy">
+            <h2 id="production-title">Built for production teams</h2>
+            <p>
+              The landing page starts as a prototype, but the interface shape is
+              ready for a real generation backend, private model endpoints, and
+              studio review workflows.
+            </p>
+          </div>
+          <div class="handoff-panel">
+            <div class="handoff-row">
+              <span>Input</span>
+              <strong>prompt, sketch, product reference</strong>
+            </div>
+            <div class="handoff-row">
+              <span>Model</span>
+              <strong>clay diffusion sequence</strong>
+            </div>
+            <div class="handoff-row">
+              <span>Output</span>
+              <strong>loop, storyboard, reel</strong>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer" id="contact">
+        <span>Clayflow</span>
+        <a href="mailto:hello@clayflow.example">hello@clayflow.example</a>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
